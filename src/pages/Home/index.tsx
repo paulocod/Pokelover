@@ -15,7 +15,7 @@ interface PokemonProps {
 
 const Home: React.FC = () => {
   const NUMBER_POKEMONS = 9;
-  const NUMBER_MAX_POKEMONS_API = 1118;
+  const NUMBER_MAX_POKEMONS_API = 750;
 
   const [pokemons, setPokemons] = useState<PokemonProps[]>([]);
   const [pokemonSearch, setPokemonSearch] = useState('');
@@ -61,7 +61,7 @@ const Home: React.FC = () => {
     },
     [NUMBER_POKEMONS],
   );
-
+  console.log(pokemons);
   return (
     <Container>
       <Pokeball />

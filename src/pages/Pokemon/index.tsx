@@ -92,9 +92,7 @@ const Pokemon: React.FC = () => {
       setPokemon({
         id,
         number: id,
-        image:
-          sprites.other['official-artwork'].front_default ||
-          sprites.front_default,
+        image: sprites.other.dream_world.front_default || sprites.front_default,
         weight: `${weight / 10} kg`,
         specie: species.name,
         height: `${height / 10} m`,

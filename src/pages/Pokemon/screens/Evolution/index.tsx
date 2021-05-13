@@ -86,7 +86,7 @@ const Evolution: React.FC<{ name: string; color: string }> = ({ name }) => {
           return {
             ...pokemonsFamily[index],
             number: `#${'000'.substr(id.toString().length)}${id}`,
-            image: sprites.other['official-artwork'].front_default,
+            image: sprites.other.dream_world.front_default,
           };
         });
         setEvolvesPokemon(result);

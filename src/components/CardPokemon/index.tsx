@@ -30,6 +30,7 @@ interface PokemonProps {
 const CardPokemon: React.FC<{ name: string }> = ({ name }) => {
   const { colors } = useTheme();
   const [pokemon, setPokemon] = useState({} as PokemonProps);
+  console.log(pokemon);
 
   useEffect(() => {
     api.get(`/pokemon/${name}`).then(response => {
@@ -44,7 +45,7 @@ const CardPokemon: React.FC<{ name: string }> = ({ name }) => {
       setPokemon({
         id,
         backgroundColor: colors.backgroundType[backgroundColor],
-        image: sprites.other['official-artwork'].front_default,
+        image: sprites.other.dream_world.front_default,
         type: types.map((pokemonType: any) => {
           const typeName = pokemonType.type
             .name as keyof typeof iconTypePokemon;

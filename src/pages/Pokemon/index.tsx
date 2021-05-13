@@ -9,6 +9,8 @@ import pokemonTypes from '~/assets/types';
 import { Pokeball } from '~/assets/patterns';
 
 import About from './screens/About';
+import Stats from './screens/Stats';
+import Evolution from './screens/Evolution';
 
 import {
   Container,
@@ -43,6 +45,14 @@ export interface PokemonProps {
   height: string;
   weight: string;
   type: PokemonTypesProps[];
+  stats: {
+    hp: number;
+    attack: number;
+    defense: number;
+    specialAttack: number;
+    specialDefense: number;
+    speed: number;
+  };
 }
 
 interface TypePokemonResponse {
@@ -63,7 +73,15 @@ const Pokemon: React.FC = () => {
 
   useEffect(() => {
     api.get(`/pokemon/${name}`).then(response => {
-      const { id, weight, height, sprites, types, species } = response.data;
+      const {
+        id,
+        weight,
+        height,
+        sprites,
+        stats,
+        types,
+        species,
+      } = response.data;
 
       setBackgroundColor(types[0].type.name);
 
@@ -80,6 +98,14 @@ const Pokemon: React.FC = () => {
         weight: `${weight / 10} kg`,
         specie: species.name,
         height: `${height / 10} m`,
+        stats: {
+          hp: stats[0].base_stat,
+          attack: stats[1].base_stat,
+          defense: stats[2].base_stat,
+          specialAttack: stats[3].base_stat,
+          specialDefense: stats[4].base_stat,
+          speed: stats[5].base_stat,
+        },
 
         type: types.map((pokemonType: TypePokemonResponse) => ({
           name: pokemonType.type.name,
@@ -95,6 +121,10 @@ const Pokemon: React.FC = () => {
     switch (nameSectionActive) {
       case 'about':
         return <About pokemon={pokemon} colorText={color} />;
+      case 'stats':
+        return pokemon.stats && <Stats stats={pokemon.stats} color={color} />;
+      case 'evolution':
+        return <Evolution name={name} color={color} />;
       default:
         return <></>;
     }
@@ -134,7 +164,7 @@ const Pokemon: React.FC = () => {
         </Header>
 
         <SectionsName>
-          {['about'].map(nameSection => (
+          {['about', 'stats', 'evolution'].map(nameSection => (
             <SectionsNameButton
               key={nameSection}
               type="button"

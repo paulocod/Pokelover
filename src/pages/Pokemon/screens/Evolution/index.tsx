@@ -101,7 +101,7 @@ const Evolution: React.FC<{ name: string; color: string }> = ({ name }) => {
           <React.Fragment key={evolves.level}>
             {index !== 0 && (
               <EvolutionPokemon>
-                <FaLongArrowAltRight size={80} color="rgba(0, 0, 0, 0.06)" />
+                <FaLongArrowAltRight size={80} color="rgba(0, 0, 0, 0.2)" />
                 <p>(Level {evolves.level || 'null'})</p>
               </EvolutionPokemon>
             )}

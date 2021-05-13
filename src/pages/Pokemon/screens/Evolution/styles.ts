@@ -49,7 +49,7 @@ export const EvolutionPokemonImage = styled(Link)`
     width: initial;
     transition: transform 0.8s ease;
     path {
-      fill: rgba(0, 0, 0, 0.06);
+      fill: rgba(0, 0, 0, 0.2);
     }
   }
   ${media.lessThan('huge')`
@@ -62,7 +62,7 @@ export const EvolutionPokemonImage = styled(Link)`
   `};
   &:hover {
     img {
-      transform: scale(1.15);
+      transform: scale(1.25);
     }
     svg {
       transform: rotate(180deg);

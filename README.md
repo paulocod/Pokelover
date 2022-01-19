@@ -16,16 +16,22 @@ Pokelover
 
 <br>
 
+<p align="center" style="display: flex; align-items: flex-start; justify-content: center;">
+  <img alt="Pokelover" title="Pokelover" src="https://user-images.githubusercontent.com/53629713/150214494-f3068e9f-9bb8-41e1-9c09-58894feaa144.png" width="720px">
+  <hr>
+  <p align="center" style="display: flex; align-items: flex-start; justify-content: center;">
+  <img alt="Pokelover2" title="Pokelover2" src="https://user-images.githubusercontent.com/53629713/150214920-8a8b8c78-bef0-4276-a74a-874975a7250b.png" width="720px">
+</p>
 
 ## 🚀 Tecnologias
 
 Esse projeto foi desenvolvido com as seguintes tecnologias:
 
-- HTML
-- CSS
-- axios
-- Styled-Components
 - TypeScript
+- NodeJs
+- Styled-Components
+- Jest
+- axios
 - React
 - Polished
 
